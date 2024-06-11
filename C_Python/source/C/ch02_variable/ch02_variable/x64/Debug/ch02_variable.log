@@ -1,4 +1,0 @@
-﻿  ex6.c
-C:\C_Python\source\C\ch02_variable\ex6.c(7,10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'size_t'입니다.
-C:\C_Python\source\C\ch02_variable\ex6.c(9,10): warning C4477: 'scanf_s' : 서식 문자열 '%s'에 'unsigned int' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'size_t'입니다.
-  ch02_variable.vcxproj -> C:\C_Python\source\C\ch02_variable\x64\Debug\ch02_variable.exe
