@@ -1,18 +1,17 @@
 #include <stdio.h>
-//#은 컴파일러가 아니라 전처리기한테! function처럼 보증하기 위해 괄호를 많이 써야함
-#define MAX(a, b) ((a) > (b) ? (a) : (b))
-#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#define ADD(a, b) ((a) + (b))
+#define SUBTRACT(a, b) ((a) - (b))
 
 int main() {
     int num1 = 20;
-    int num2 = 30;
-    int max_result = MAX(num1, num2);
-    int min_result = MIN(num1, num2);
+    int num2 = 10;
+    int sum_result = ADD(num1, num2);
+    int diff_result = SUBTRACT(num1, num2);
 
     printf("숫자 1: %d\n", num1);
     printf("숫자 2: %d\n", num2);
-    printf("최댓값: %d\n", max_result);
-    printf("최솟값: %d\n", min_result);
+    printf("덧셈 결과: %d\n", sum_result);
+    printf("뺄셈 결과: %d\n", diff_result);
 
     return 0;
 }

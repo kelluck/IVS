@@ -3,9 +3,13 @@
 
 typedef union {
     struct{
-        unsigned int BR : 3;
+        unsigned int BR          : 3;  // 3 bits
+        unsigned int Reseved     : 1;  // 1 bit
+        unsigned int BR_RATIO    : 2;  // 2 bits
+        unsigned int Reserved    : 1;  // 1 bit
+        unsigned int SWK_EN      : 1;  // 1 bit
     }fields;
-    uint8_t value
+    uint8_t value;
 } BitFieldUnion;
 
 int main() {

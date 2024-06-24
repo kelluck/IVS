@@ -4,7 +4,7 @@
     for(int i = 1; i <= (n); i++){ \
         result *= i; \
     } \
-    result
+    result;\
 })
 
 int main() {

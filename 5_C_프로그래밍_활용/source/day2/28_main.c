@@ -1,7 +1,6 @@
 // main.c 파일
 #include <stdio.h>
-#include "29_student.h"
-#define FEATURE_SECOND_STUDENT
+#include "28_student.h"
 
 int main() {
     // 첫 번째 학생 정보 생성

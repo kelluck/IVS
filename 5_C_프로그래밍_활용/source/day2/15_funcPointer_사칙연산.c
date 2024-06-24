@@ -46,6 +46,9 @@ int main() {
         case '/':
             operation = divide;
             break;
+        default:
+            printf("유효하지 않은 연산자입니다.\n");
+            return 1;
     }
     int result = operation(num1, num2);
     printf("결과: %d\n", result);

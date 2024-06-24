@@ -7,10 +7,10 @@ typedef struct {
     uint16_t currentData2 : 10;
     uint16_t currentData3 : 10;
     uint16_t currentData4 : 10;
-    uint16_t gsensor1 : 10;
-    uint16_t gsensor2 : 10;
-    uint16_t gsensor3 : 10;
-    uint16_t gsensor4 : 10;
+    uint16_t gsensor1 : 6;
+    uint16_t gsensor2 : 6;
+    uint16_t gsensor3 : 6;
+    uint16_t gsensor4 : 6;
     
 } myData;
 
@@ -19,7 +19,8 @@ int main() {
     myData mydata;
     // 데이터를 비트 필드로 복사
     //memcpy()로 하면 안됨 -> 전에 했던 방식으로 해야 함!
-
+    //memcpy(&mydata,canDataArray,sizeof(mydata));
+    
     printf("Current Data:\n");
     printf("Current 1: %x\n", mydata.currentData1);
     printf("Current 2: %x\n", mydata.currentData2);
