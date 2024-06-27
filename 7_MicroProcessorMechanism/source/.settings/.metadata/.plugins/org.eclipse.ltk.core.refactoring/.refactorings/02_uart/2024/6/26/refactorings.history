@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;ASCLIN_Shell_UART_1_KIT_TC275_SB/ASCLIN_Shell_UART.c&apos; to &apos;uart.c&apos;" description="Rename resource &apos;ASCLIN_Shell_UART.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ASCLIN_Shell_UART.c" name="uart.c" stamp="1719465900669" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;ASCLIN_Shell_UART_1_KIT_TC275_SB/ASCLIN_Shell_UART.h&apos; to &apos;uart.h&apos;" description="Rename resource &apos;ASCLIN_Shell_UART.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ASCLIN_Shell_UART.h" name="uart.h" stamp="1719465905837" updateReferences="true"/>
+</session>

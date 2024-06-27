@@ -1,0 +1,13 @@
+14:58:03 **** Incremental Build of configuration Debug for project 02_uart ****
+make --output-sync -j12 all 
+Invoking: Print Size
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+elfsize  "02_uart.elf"
+Total sizes:
+ROM: 0x3ba2 (15266) = code: 0x39be (14782) + romdata: 0x1e4 (484)
+RAM: 0x9744 (38724) = data + bss
+Finished building: 02_uart.siz
+ 
+
+14:58:03 Build Finished. 0 errors, 0 warnings. (took 452ms)
+

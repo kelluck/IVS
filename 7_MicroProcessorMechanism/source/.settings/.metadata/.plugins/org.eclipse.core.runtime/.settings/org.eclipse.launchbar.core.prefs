@@ -1,0 +1,7 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:01_led,org.eclipse.launchbar.core.descriptorType.default\:02_uart,org.eclipse.launchbar.core.descriptorType.default\:03_scheduling
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:aurix_TC275/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:aurix_TC275/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
