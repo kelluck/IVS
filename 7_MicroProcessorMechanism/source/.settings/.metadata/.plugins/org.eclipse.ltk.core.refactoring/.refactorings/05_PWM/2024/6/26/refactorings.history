@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;05_PWM/ConfigurarionIsr.h&apos; to &apos;ConfigurationIsr.h&apos;" description="Rename resource &apos;ConfigurarionIsr.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ConfigurarionIsr.h" name="ConfigurationIsr.h" stamp="1719554791858" updateReferences="true"/>
+</session>

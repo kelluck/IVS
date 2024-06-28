@@ -94,3 +94,25 @@ Cpu0_Main.o :	../AppScheduling.h
 ../AppScheduling.h :
 Cpu0_Main.o :	../Blinky_LED.h
 ../Blinky_LED.h :
+Cpu0_Main.o :	../uart.h
+../uart.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Asclin/Asc/IfxAsclin_Asc.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Asclin/Asc/IfxAsclin_Asc.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Asclin/Std/IfxAsclin.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Asclin/Std/IfxAsclin.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/_Impl/IfxAsclin_cfg.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/_Impl/IfxAsclin_cfg.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Infra/Sfr/TC27D/_Reg/IfxAsclin_reg.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Infra/Sfr/TC27D/_Reg/IfxAsclin_reg.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Infra/Sfr/TC27D/_Reg/IfxAsclin_regdef.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Infra/Sfr/TC27D/_Reg/IfxAsclin_regdef.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/_PinMap/IfxAsclin_PinMap.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/_PinMap/IfxAsclin_PinMap.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/Ifx_Fifo.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/Ifx_Fifo.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Stm/Std/IfxStm.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Stm/Std/IfxStm.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :
+Cpu0_Main.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h
+c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h :

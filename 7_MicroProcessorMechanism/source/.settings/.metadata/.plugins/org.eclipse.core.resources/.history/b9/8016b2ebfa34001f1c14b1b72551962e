@@ -1,0 +1,25 @@
+/*
+ * DrvAdc.h
+ *
+ *  Created on: 2024. 6. 28.
+ *      Author: user
+ */
+
+#ifndef DRVADC_H_
+#define DRVADC_H_
+
+#include "Ifx_Types.h"
+
+typedef enum
+{
+    ADC_GROUP0_CH0 = 0u,
+    ADC_GROUP0_CH1,
+    ADC_GROUP0_MAX
+}ADC_GROUP0;
+
+extern uint32 stSensorAdcRaw; // 받고 싶은 센싱 변수
+
+extern void DrvAdcInit(void);
+extern void DrvAdc_GetAdcRawGroup0(void);
+
+#endif /* DRVADC_H_ */

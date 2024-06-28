@@ -30,6 +30,7 @@
 #include "Driver_Stm.h"
 #include "AppScheduling.h"
 #include "Blinky_LED.h"
+#include "uart.h"
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -48,6 +49,7 @@ int core0_main(void)
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
     Driver_Stm_Init();
+
     initLED();
     _init_uart3();
 

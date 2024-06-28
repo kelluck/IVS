@@ -90,6 +90,8 @@ AppScheduling.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_schedulin
 c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Infra/Sfr/TC27D/_Reg/IfxCbs_regdef.h :
 AppScheduling.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Cpu/Irq/IfxCpu_Irq.h
 c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Cpu/Irq/IfxCpu_Irq.h :
+AppScheduling.o :	../Blinky_LED.h
+../Blinky_LED.h :
 AppScheduling.o :	../uart.h
 ../uart.h :
 AppScheduling.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/iLLD/TC27D/Tricore/Asclin/Asc/IfxAsclin_Asc.h
@@ -112,5 +114,3 @@ AppScheduling.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_schedulin
 c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :
 AppScheduling.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h
 c:/IVS/7_MicroProcessorMechanism/source/.settings/03_scheduling/Libraries/Service/CpuGeneric/StdIf/IfxStdIf.h :
-AppScheduling.o :	../Blinky_LED.h
-../Blinky_LED.h :

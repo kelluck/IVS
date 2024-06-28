@@ -942,3 +942,2053 @@ java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.Sched
 
 !ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-27 16:59:07.479
 !MESSAGE Include paths were discovered in 26 milliseconds.
+!SESSION 2024-06-28 09:09:16.126 -----------------------------------------------
+eclipse.buildId=1.9.20
+java.version=17.0.4.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -perspective com.infineon.aurix.buildmanager.perspective.c
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -perspective com.infineon.aurix.buildmanager.perspective.c
+
+!ENTRY com.infineon.aurix.buildsystem 4 0 2024-06-28 09:09:37.627
+!MESSAGE ConnectException
+!STACK 0
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:573)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:123)
+	at com.infineon.aurix.buildsystem.IFXNetworkUtils$1.run(IFXNetworkUtils.java:44)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1047)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:198)
+	at java.net.http/jdk.internal.net.http.AsyncSSLConnection.connectAsync(AsyncSSLConnection.java:56)
+	at java.net.http/jdk.internal.net.http.Http1Exchange.sendHeadersAsync(Http1Exchange.java:239)
+	at java.net.http/jdk.internal.net.http.Exchange.lambda$responseAsyncImpl0$9(Exchange.java:472)
+	at java.net.http/jdk.internal.net.http.Exchange.checkFor407(Exchange.java:404)
+	at java.net.http/jdk.internal.net.http.Exchange.lambda$responseAsyncImpl0$10(Exchange.java:476)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl0(Exchange.java:476)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsyncImpl(Exchange.java:380)
+	at java.net.http/jdk.internal.net.http.Exchange.responseAsync(Exchange.java:372)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:408)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsyncImpl$7(MultiExchange.java:449)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandleStage(CompletableFuture.java:950)
+	at java.base/java.util.concurrent.CompletableFuture.handle(CompletableFuture.java:2340)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsyncImpl(MultiExchange.java:439)
+	at java.net.http/jdk.internal.net.http.MultiExchange.lambda$responseAsync0$2(MultiExchange.java:341)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1150)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$DelegatingExecutor.execute(HttpClientImpl.java:157)
+	at java.base/java.util.concurrent.CompletableFuture.completeAsync(CompletableFuture.java:2673)
+	at java.net.http/jdk.internal.net.http.MultiExchange.responseAsync(MultiExchange.java:294)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.sendAsync(HttpClientImpl.java:654)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:552)
+	... 3 more
+Caused by: java.nio.channels.UnresolvedAddressException
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:149)
+	at java.base/sun.nio.ch.Net.checkAddress(Net.java:157)
+	at java.base/sun.nio.ch.SocketChannelImpl.checkRemote(SocketChannelImpl.java:816)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:839)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$0(PlainHttpConnection.java:183)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
+	... 29 more
+
+!ENTRY com.infineon.aurix.buildsystem.analytics 2 0 2024-06-28 09:09:37.895
+!MESSAGE Unable to initialize Analytics Service.
+
+!ENTRY com.infineon.aurix.buildsystem.analytics 4 0 2024-06-28 09:09:37.895
+!MESSAGE java.net.MalformedURLException: no protocol: 
+!STACK 0
+java.lang.IllegalArgumentException: java.net.MalformedURLException: no protocol: 
+	at com.google.api.client.http.GenericUrl.parseURL(GenericUrl.java:679)
+	at com.google.api.client.http.GenericUrl.<init>(GenericUrl.java:125)
+	at com.google.api.client.http.GenericUrl.<init>(GenericUrl.java:108)
+	at com.infineon.aurix.buildsystem.analytics.AnalyticsService.<init>(AnalyticsService.java:66)
+	at com.infineon.aurix.buildsystem.analytics.AnalyticsService.getInstance(AnalyticsService.java:95)
+	at com.infineon.aurix.buildsystem.AnalyticsUtils.send(AnalyticsUtils.java:24)
+	at com.infineon.aurix.buildsystem.Analytics.sendToolStarted(Analytics.java:6)
+	at com.infineon.aurix.buildsystem.AurixIDEStartup.earlyStartup(AurixIDEStartup.java:23)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.MalformedURLException: no protocol: 
+	at java.base/java.net.URL.<init>(URL.java:674)
+	at java.base/java.net.URL.<init>(URL.java:569)
+	at java.base/java.net.URL.<init>(URL.java:516)
+	at com.google.api.client.http.GenericUrl.parseURL(GenericUrl.java:677)
+	... 12 more
+
+!ENTRY org.eclipse.ui.workbench 4 2 2024-06-28 09:09:37.929
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.IllegalArgumentException: java.net.MalformedURLException: no protocol: 
+	at com.google.api.client.http.GenericUrl.parseURL(GenericUrl.java:679)
+	at com.google.api.client.http.GenericUrl.<init>(GenericUrl.java:125)
+	at com.google.api.client.http.GenericUrl.<init>(GenericUrl.java:108)
+	at com.infineon.aurix.buildsystem.notification.NotificationService.<init>(NotificationService.java:62)
+	at com.infineon.aurix.buildsystem.notification.NotificationService.getInstance(NotificationService.java:82)
+	at com.infineon.aurix.buildsystem.analytics.AnalyticsService.send(AnalyticsService.java:159)
+	at com.infineon.aurix.buildsystem.AnalyticsUtils.send(AnalyticsUtils.java:24)
+	at com.infineon.aurix.buildsystem.Analytics.sendToolStarted(Analytics.java:6)
+	at com.infineon.aurix.buildsystem.AurixIDEStartup.earlyStartup(AurixIDEStartup.java:23)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.MalformedURLException: no protocol: 
+	at java.base/java.net.URL.<init>(URL.java:674)
+	at java.base/java.net.URL.<init>(URL.java:569)
+	at java.base/java.net.URL.<init>(URL.java:516)
+	at com.google.api.client.http.GenericUrl.parseURL(GenericUrl.java:677)
+	... 13 more
+
+!ENTRY org.eclipse.ui 4 0 2024-06-28 09:09:37.930
+!MESSAGE Unable to execute early startup code for the org.eclipse.ui.IStartup extension contributed by the 'com.infineon.aurix.buildsystem' plug-in.
+!STACK 0
+java.lang.IllegalArgumentException: java.net.MalformedURLException: no protocol: 
+	at com.google.api.client.http.GenericUrl.parseURL(GenericUrl.java:679)
+	at com.google.api.client.http.GenericUrl.<init>(GenericUrl.java:125)
+	at com.google.api.client.http.GenericUrl.<init>(GenericUrl.java:108)
+	at com.infineon.aurix.buildsystem.notification.NotificationService.<init>(NotificationService.java:62)
+	at com.infineon.aurix.buildsystem.notification.NotificationService.getInstance(NotificationService.java:82)
+	at com.infineon.aurix.buildsystem.analytics.AnalyticsService.send(AnalyticsService.java:159)
+	at com.infineon.aurix.buildsystem.AnalyticsUtils.send(AnalyticsUtils.java:24)
+	at com.infineon.aurix.buildsystem.Analytics.sendToolStarted(Analytics.java:6)
+	at com.infineon.aurix.buildsystem.AurixIDEStartup.earlyStartup(AurixIDEStartup.java:23)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2656)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.net.MalformedURLException: no protocol: 
+	at java.base/java.net.URL.<init>(URL.java:674)
+	at java.base/java.net.URL.<init>(URL.java:569)
+	at java.base/java.net.URL.<init>(URL.java:516)
+	at com.google.api.client.http.GenericUrl.parseURL(GenericUrl.java:677)
+	... 13 more
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:12:39.496
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1751 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:12:39.677
+!MESSAGE Include paths were discovered in 173 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:13:23.996
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@29fe4695[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@1de45022[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@4d22477d]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@599024c2[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1048]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@29fe4695[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@1de45022[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@4d22477d]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@599024c2[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1048]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:15:45.151
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 246 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:15:45.191
+!MESSAGE Include paths were discovered in 39 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:16:13.363
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@59d1fba2[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@61ebc271[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6dccf6b3]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@57da5973[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1113]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@59d1fba2[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@61ebc271[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6dccf6b3]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@57da5973[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1113]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:17:57.958
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:17:57.958
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:17:58.007
+!MESSAGE Include paths were discovered in 47 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:18:17.591
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@57df34c4[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@3af081e1[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@7f10b6cb]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@5adb3877[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1100]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@57df34c4[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@3af081e1[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@7f10b6cb]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@5adb3877[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1100]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:20:27.857
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:20:27.858
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:20:27.973
+!MESSAGE Include paths were discovered in 114 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:20:49.870
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@963b7f4[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@23c937c2[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@53ffc5c0]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@313d5c93[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1097]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@963b7f4[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@23c937c2[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@53ffc5c0]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@313d5c93[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1097]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:23:08.392
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 188 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:23:08.465
+!MESSAGE Include paths were discovered in 71 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:23:51.223
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:23:51.225
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1 milliseconds. (full boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:23:51.311
+!MESSAGE Include paths were discovered in 84 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:25:44.530
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@445de5eb[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@4c900087[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@afe3765]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@798f92c3[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1758]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@445de5eb[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@4c900087[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@afe3765]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@798f92c3[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1758]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:26:07.484
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:26:07.485
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:26:07.575
+!MESSAGE Include paths were discovered in 88 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:27:02.692
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@35a0f2d[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@4fd951db[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@7632dd32]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@4a024a21[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1322]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@35a0f2d[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@4fd951db[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@7632dd32]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@4a024a21[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1322]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:30:16.904
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:30:16.905
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:30:16.994
+!MESSAGE Include paths were discovered in 86 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:31:37.365
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:31:37.366
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:31:37.447
+!MESSAGE Include paths were discovered in 78 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:33:38.084
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@4c6d602d[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@68fcd8e3[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@420e1243]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@5bb860ae[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1303]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@4c6d602d[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@68fcd8e3[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@420e1243]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@5bb860ae[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1303]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:34:50.434
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:34:50.436
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:34:50.514
+!MESSAGE Include paths were discovered in 77 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:35:27.626
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@2ff2348e[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@344b953b[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@2807ec2b]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@232b8919[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1360]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@2ff2348e[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@344b953b[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@2807ec2b]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@232b8919[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1360]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:40:51.820
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 1168 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:40:51.905
+!MESSAGE Include paths were discovered in 84 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:42:22.981
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1d2e55ee[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7e4a2e84[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@54423ceb]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@58aed1a[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1428]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1d2e55ee[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7e4a2e84[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@54423ceb]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@58aed1a[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1428]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:47:32.060
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:47:32.060
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:47:32.086
+!MESSAGE Include paths were discovered in 25 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:51:15.282
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:51:15.282
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:51:15.310
+!MESSAGE Include paths were discovered in 27 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:51:31.814
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:51:31.815
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 09:51:31.843
+!MESSAGE Include paths were discovered in 27 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 09:51:58.914
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@c827b90[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@40c1b183[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@b988d0]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@44ea2dc0[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1534]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@c827b90[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@40c1b183[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@b988d0]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@44ea2dc0[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1534]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem.remote-repo 1 0 2024-06-28 10:19:38.234
+!MESSAGE Using bundled version for artifact: project-initializer:tricore-tc2xx
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 10:19:39.852
+!MESSAGE Processing template: C:\IVS\7_MicroProcessorMechanism\source\.settings\04_adc\Cpu0_Main.ftlc
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-28 10:19:58.289
+!MESSAGE Indexed '04_adc' (165 sources, 638 headers) in 16.8 sec: 147,675 declarations; 196,219 references; 10 unresolved inclusions; 4,982 syntax errors; 5,551 unresolved names (1.6%)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:32:54.588
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 863 milliseconds. (full boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:32:54.633
+!MESSAGE Include paths were discovered in 44 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:34:18.105
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 922 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:34:18.140
+!MESSAGE Include paths were discovered in 34 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 11:36:21.194
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@a224d84[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@3e6db9e5[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@658cc5bb]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@111d8e76[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1447]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@a224d84[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@3e6db9e5[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@658cc5bb]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@111d8e76[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1447]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:36:57.772
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:36:57.773
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:36:57.799
+!MESSAGE Include paths were discovered in 26 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 11:37:28.760
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@787f9922[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@38f78e6c[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@116527b1]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@29da7929[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1535]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@787f9922[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@38f78e6c[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@116527b1]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@29da7929[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1535]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:39:29.433
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 832 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:39:29.456
+!MESSAGE Include paths were discovered in 23 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 11:45:14.778
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@697f1f76[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@69b175dd[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@36bf721e]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@16606abd[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1435]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@697f1f76[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@69b175dd[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@36bf721e]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@16606abd[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1435]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:46:39.948
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:46:39.948
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:46:39.987
+!MESSAGE Include paths were discovered in 38 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 11:47:02.312
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1cb1bbd8[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@1522213[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@64558b69]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@74f0cb2f[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1478]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@1cb1bbd8[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@1522213[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@64558b69]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@74f0cb2f[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1478]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:47:19.367
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:47:19.367
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:47:19.395
+!MESSAGE Include paths were discovered in 27 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 11:47:36.946
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@5f60d0cb[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@746b8e7a[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@3efd808e]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@239aca6a[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1537]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@5f60d0cb[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@746b8e7a[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@3efd808e]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@239aca6a[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1537]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:50:09.896
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 847 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 11:50:09.922
+!MESSAGE Include paths were discovered in 25 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 11:50:48.432
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@19e77b5e[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@58f1c8ab[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@35c853d8]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@592ffc8e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1567]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@19e77b5e[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@58f1c8ab[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@35c853d8]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@592ffc8e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1567]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:04:02.117
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 829 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:04:02.161
+!MESSAGE Include paths were discovered in 43 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 12:04:44.040
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@7dd7c21b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@50aea0bd[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6e9b6fd1]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@58285d84[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1507]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@7dd7c21b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@50aea0bd[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6e9b6fd1]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@58285d84[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1507]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:07:53.872
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 848 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:07:53.902
+!MESSAGE Include paths were discovered in 29 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:08:06.831
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 109 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:08:06.860
+!MESSAGE Include paths were discovered in 28 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:08:39.741
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 139 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:08:39.770
+!MESSAGE Include paths were discovered in 28 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 12:09:29.217
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@53453a2a[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@47feee49[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6564e0df]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@43ba3ad8[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 563]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@53453a2a[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@47feee49[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6564e0df]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@43ba3ad8[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 563]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:12:02.763
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 884 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:12:02.786
+!MESSAGE Include paths were discovered in 22 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:14:00.658
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 838 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:14:00.694
+!MESSAGE Include paths were discovered in 35 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 12:15:16.143
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@58d8f107[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@5b8b502e[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@19efc154]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@2aaaf7f5[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1532]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@58d8f107[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@5b8b502e[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@19efc154]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@2aaaf7f5[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1532]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:28:07.444
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 03_scheduling boosted in 2022 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:28:07.465
+!MESSAGE Include paths were discovered in 20 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 12:29:42.160
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@511a079c[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@330d31cf[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@4792ae2b]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@4c4004fa[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1119]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@511a079c[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@330d31cf[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@4792ae2b]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@4c4004fa[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1119]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:35:30.985
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 825 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 12:35:31.010
+!MESSAGE Include paths were discovered in 24 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:41:58.134
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:41:58.134
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:41:58.163
+!MESSAGE Include paths were discovered in 27 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:42:01.223
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 113 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:42:01.262
+!MESSAGE Include paths were discovered in 38 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:42:24.126
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 114 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:42:24.181
+!MESSAGE Include paths were discovered in 53 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:43:46.887
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:43:46.887
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:43:46.906
+!MESSAGE Include paths were discovered in 18 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:46:28.487
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 963 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:46:28.507
+!MESSAGE Include paths were discovered in 19 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 13:47:03.473
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@740b7d3b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@69aa4b1a[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@712b784c]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@f0eb79e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1305]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@740b7d3b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@69aa4b1a[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@712b784c]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@f0eb79e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1305]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:47:13.267
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:47:13.267
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 13:47:13.294
+!MESSAGE Include paths were discovered in 26 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 13:47:46.156
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@753522fe[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@2bb3b5ef[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@461e5a2e]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@61f75c6f[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1274]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@753522fe[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@2bb3b5ef[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@461e5a2e]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@61f75c6f[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1274]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:08:12.397
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 849 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:08:12.427
+!MESSAGE Include paths were discovered in 29 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 14:09:27.415
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@2874ffc[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@78099bb6[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@14309202]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@90b9d62[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1431]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@2874ffc[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@78099bb6[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@14309202]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@90b9d62[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1431]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:10:49.391
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:10:49.392
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:10:49.412
+!MESSAGE Include paths were discovered in 19 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 14:27:23.079
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@7512f99b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@69241c93[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@329e3a05]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@7e5e861c[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 482]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@7512f99b[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@69241c93[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@329e3a05]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@7e5e861c[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 482]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:27:53.831
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 975 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:27:53.864
+!MESSAGE Include paths were discovered in 31 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:47:08.272
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:47:08.273
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 04_adc boosted in 1 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:47:08.336
+!MESSAGE Include paths were discovered in 61 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 14:50:49.228
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@49fe342[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7535e580[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@32f69320]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@5a95704e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1210]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@49fe342[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7535e580[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@32f69320]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@5a95704e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 1210]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem.remote-repo 1 0 2024-06-28 14:52:11.308
+!MESSAGE Using bundled version for artifact: project-initializer:tricore-tc2xx
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 14:52:13.772
+!MESSAGE Processing template: C:\IVS\7_MicroProcessorMechanism\source\.settings\05_PWM\Cpu0_Main.ftlc
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-28 14:52:28.424
+!MESSAGE Indexed '05_PWM' (165 sources, 638 headers) in 12.9 sec: 147,675 declarations; 196,219 references; 10 unresolved inclusions; 4,982 syntax errors; 5,551 unresolved names (1.6%)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:44:35.385
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:44:35.386
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 1 milliseconds. (full boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:44:35.433
+!MESSAGE Include paths were discovered in 46 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:45:55.452
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 937 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:45:55.489
+!MESSAGE Include paths were discovered in 35 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:47:41.939
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:47:41.940
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:47:41.966
+!MESSAGE Include paths were discovered in 22 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:49:55.194
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 221 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 15:49:55.230
+!MESSAGE Include paths were discovered in 35 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:00:01.838
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:00:01.839
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:00:01.883
+!MESSAGE Include paths were discovered in 43 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 16:00:27.028
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@6c6e6a09[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@5007da3c[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@3b02e90c]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@abcaeb7[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 20907]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@6c6e6a09[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@5007da3c[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@3b02e90c]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@abcaeb7[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 20907]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:12:57.820
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 173 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:12:57.858
+!MESSAGE Include paths were discovered in 36 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 16:13:24.820
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@219130ed[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7c0da6a3[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6b9282d5]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@627d113e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 454]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@219130ed[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@7c0da6a3[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@6b9282d5]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@627d113e[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 454]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:14:05.977
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 859 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:14:06.011
+!MESSAGE Include paths were discovered in 34 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 16:14:36.046
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@d39541[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@18e8e89e[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@591eec3b]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@4eaa7322[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 454]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@d39541[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@18e8e89e[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@591eec3b]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@4eaa7322[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 454]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:24:20.593
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 114 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:24:20.610
+!MESSAGE Include paths were discovered in 17 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:30:59.433
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:30:59.434
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:30:59.459
+!MESSAGE Include paths were discovered in 25 milliseconds.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:31:57.565
+!MESSAGE Project index is not complete, and cannot be used for boosting.
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:31:57.565
+!MESSAGE Boosting configuration TriCore Debug (TASKING) of project 05_PWM boosted in 0 milliseconds. (incremental boost)
+
+!ENTRY com.infineon.aurix.buildsystem 1 0 2024-06-28 16:31:57.584
+!MESSAGE Include paths were discovered in 18 milliseconds.
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2024-06-28 16:32:18.299
+!MESSAGE Invocation exception when calling a service event handler method
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@e86a2b6[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@3be0ee2e[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@1df297f2]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@71ead9b5[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 262]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	... 12 more
+Root exception:
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@e86a2b6[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@3be0ee2e[Wrapped task = com.tasking.debug.cdt.dsf.launch.DWNServicesShutdownSequence@1df297f2]] rejected from org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor@71ead9b5[Shutting down, pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 262]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$AbortPolicy.rejectedExecution(ThreadPoolExecutor.java:2065)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.reject(ThreadPoolExecutor.java:833)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.delayedExecute(ScheduledThreadPoolExecutor.java:340)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.schedule(ScheduledThreadPoolExecutor.java:562)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.schedule(DefaultDsfExecutor.java:450)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor.execute(ScheduledThreadPoolExecutor.java:705)
+	at org.eclipse.cdt.dsf.concurrent.DefaultDsfExecutor.execute(DefaultDsfExecutor.java:474)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.doShutdown(DWNLaunch.java:274)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.shutdownServices(DWNLaunch.java:266)
+	at com.tasking.debug.cdt.dsf.launch.DWNLaunch.eventDispatched(DWNLaunch.java:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.cdt.dsf.service.DsfSession.doDispatchEvent(DsfSession.java:541)
+	at org.eclipse.cdt.dsf.service.DsfSession$3.run(DsfSession.java:408)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
