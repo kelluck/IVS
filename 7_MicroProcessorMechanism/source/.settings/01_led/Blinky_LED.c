@@ -14,7 +14,6 @@
 void initLED(void) //초기화!
 {
     IfxPort_setPinModeOutput(LED, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
-
     IfxPort_setPinLow(LED);
 }
 

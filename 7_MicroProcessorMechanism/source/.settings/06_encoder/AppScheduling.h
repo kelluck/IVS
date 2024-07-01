@@ -1,0 +1,15 @@
+/*
+ * AppScheduling.h
+ *
+ *  Created on: 2024. 6. 27.
+ *      Author: user
+ */
+
+#ifndef APPSCHEDULING_H_
+#define APPSCHEDULING_H_
+
+#include "Ifx_Types.h"
+
+extern void AppScheduling(void);
+
+#endif /* APPSCHEDULING_H_ */

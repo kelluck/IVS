@@ -1,0 +1,156 @@
+/*
+ * AppScheduling.c
+ *
+ *  Created on: 2024. 6. 27.
+ *      Author: user
+ */
+
+#include "AppScheduling.h"
+#include "Driver_Stm.h"
+#include "GtmTomPwmHl.h"
+#include "ConfigurationIsr.h"
+#include "IfxPort_PinMap.h" // 포트 정의
+#include "IfxPort.h" // 포트 설정
+#include "uart.h"
+
+uint8 stSensorAdcRaw0;
+uint8 stSensorAdcRaw1;
+uint8 stSensorAdcRaw2;
+
+typedef struct
+{
+        uint32 u32nuCnt1ms;
+}TestCnt;
+
+static void AppNoTask(void);
+static void AppTask1ms(void);
+float32 LPF(float32 y_old, float32 x, float32 Ts, float32 band);
+
+TestCnt stTestCnt;
+
+
+int ENCA, ENCB;
+int S, S_old, PosCnt, PosCntd, Direction, Pos_deg;
+float32 Pos_rad, theta, theta_old ;
+uint8 temp1 = 0, temp2 = 0, temp3 = 0;
+static void AppNoTask(void)
+{
+    IfxPort_setPinModeInput(IfxPort_P02_1.port, IfxPort_P02_1.pinIndex, IfxPort_InputMode_pullDown); // Digial 3 PIN
+    IfxPort_setPinModeInput(IfxPort_P02_0.port, IfxPort_P02_0.pinIndex, IfxPort_InputMode_pullDown); // Digial 2 PIN
+    ENCA = IfxPort_getPinState(&MODULE_P02,1); // Encoder A Signal state
+    ENCB = IfxPort_getPinState(&MODULE_P02,0); // Encoder B Signal state
+
+    if(ENCA == FALSE && ENCB == FALSE)
+    {
+        S = 0;
+    }
+    else if(ENCA == FALSE && ENCB == TRUE)
+    {
+        S = 1;
+    }
+    else if(ENCA == TRUE && ENCB == TRUE)
+    {
+        S = 2;
+    }
+    else if(ENCA == TRUE && ENCB == FALSE)
+    {
+        S = 3;
+    }
+
+    if(S - S_old == 1 || S - S_old == -3) // forward
+    {
+        PosCnt = PosCntd - 1;
+        Direction = 1;
+    }
+    else if(S - S_old == -1 || S - S_old == 3) // backward
+    {
+        PosCnt = PosCntd + 1;
+        Direction = -1;
+    }
+    S_old = S;
+    Pos_rad = PosCnt * 2 * 3.14159265358979323 / 48;
+    Pos_deg = (int)(PosCnt * 360 / 48);
+    PosCntd = PosCnt;
+    theta = Pos_rad;
+
+    if(Direction < 0)
+    {
+        _out_uart3(2 + '0');
+        _out_uart3('\n');
+    }
+    else
+    {
+        _out_uart3(Direction + '0');
+        _out_uart3('\n');
+    }
+
+    while(Pos_deg > 0)
+    {
+        temp1 = Pos_deg % 10;
+        _out_uart3(temp1 + '0');
+        _out_uart3('\n');
+        Pos_deg /= 10;
+    }
+
+    _out_uart3('\n');
+}
+
+uint32 t = 0, AppCnt = 0;
+float32 duty[2];
+float32 w, w_old;
+uint32 W_RPM, W_RPM_Origin;
+static void AppTask1ms(void)
+{
+    stTestCnt.u32nuCnt1ms++;
+
+    /* 5 < t < 10에만 duty 0.3 */
+    AppCnt++;
+    float32 Ts = 0.001;
+    t = AppCnt * Ts;
+
+    if(t <= 5)
+    {
+        duty[0] = 0;
+    }
+    else if(t > 5 && t < 11)
+    {
+        duty[0] = 0.3;
+    }
+    else if(t >= 11)
+    {
+        duty[0] = 0;
+    }
+    g_GtmTomPwmHl.tOn[0] = duty[0];
+
+    GtmTomPwmHl_run();
+
+    /* LPF */
+    w = (theta - theta_old) / Ts;
+    W_RPM_Origin = (uint32)(60*w/(2*3.141592)); // 추가
+    w = LPF(w_old, w, Ts, 500);
+    w_old = w;
+    W_RPM = (uint32)(60*w/(2*3.141592));
+    theta_old = theta;
+
+
+}
+
+float32 LPF(float32 y_old, float32 x, float32 Ts, float32 band)
+{
+    double A1 = Ts / (Ts + 1 / band);
+    float32 y = y_old + A1 * (x - y_old);
+
+    return y;
+}
+
+void AppScheduling(void)
+{
+    /* Encoder */
+    AppNoTask();
+
+    if(stSchedulingInfo.u8nuScheduling1msFlag == 1u)
+    {
+        stSchedulingInfo.u8nuScheduling1msFlag = 0u;
+        AppTask1ms();
+    }
+}

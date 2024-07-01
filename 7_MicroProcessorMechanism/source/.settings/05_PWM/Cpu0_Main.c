@@ -27,7 +27,17 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
+#include "Driver_Stm.h"
+#include "AppScheduling.h"
 #include "GtmTomPwmHl.h"
+#include "ConfigurationIsr.h"
+
+#include "IfxPort.h" // 포트 정의 위함
+// DIR B PIN init
+#define DIRB &MODULE_P10,2
+
+// BRAKE B PIN init
+#define BRAKEB &MODULE_P02,6
 
 IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
@@ -45,10 +55,19 @@ void core0_main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
+    Driver_Stm_Init();
     GtmTomPwmHl_init();
+
+    // DIR B PIN init
+    IfxPort_setPinModeOutput(DIRB, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(DIRB);
+
+    //BRAKE B PIN init
+    IfxPort_setPinModeOutput(BRAKEB, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
+    IfxPort_setPinLow(BRAKEB);
 
     while(1)
     {
-        GtmTomPwmHl_run();
+        AppScheduling();
     }
 }
