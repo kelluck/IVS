@@ -12,7 +12,7 @@
 #include "IfxPort_PinMap.h" // 포트 정의
 #include "IfxPort.h" // 포트 설정
 #include "uart.h"
-
+#include <math.h>
 uint8 stSensorAdcRaw0;
 uint8 stSensorAdcRaw1;
 uint8 stSensorAdcRaw2;
@@ -24,8 +24,9 @@ typedef struct
 
 void _out_uart3_int(uint32 num);
 static void AppNoTask(void);
-static void AppTask1ms(void);
 float32 LPF(float32 y_old, float32 x, float32 Ts, float32 band);
+static void AppTask1ms(void);
+
 
 TestCnt stTestCnt;
 
@@ -34,6 +35,14 @@ int ENCA, ENCB;
 int S, S_old, PosCnt, PosCntd, Direction, Pos_deg;
 float32 Pos_rad, theta, theta_old ;
 
+uint32 AppCnt = 0;
+float32 t = 0, duty[2];
+float32 w, w_old;
+uint32 W_RPM, W_RPM_Origin;
+
+float32 Wd = 1, Vin, w_ref, error_w, error_w_int, error_w_int_old, kp = 1, ki = 0.1; //Wd로 w_ref값 조절 (1초에 몇바퀴?)
+
+float32 error_theta, theta_ref, error_theta_int, error_theta_int_old, kp_theta = 15, ki_theta = 1;
 
 void _out_uart3_int(uint32 num)
 {
@@ -109,11 +118,7 @@ static void AppNoTask(void)
 //
 //    _out_uart3('\n');
 }
-
-uint32 t = 0, AppCnt = 0;
-float32 duty[2];
-float32 w, w_old;
-uint32 W_RPM, W_RPM_Origin;
+uint32 Error_w, Error_w_int;
 static void AppTask1ms(void)
 {
     stTestCnt.u32nuCnt1ms++;
@@ -123,38 +128,126 @@ static void AppTask1ms(void)
     float32 Ts = 0.001;
     t = AppCnt * Ts;
 
-    if(t <= 5)
-    {
-        duty[0] = 0;
-    }
-    else if(t > 5 && t < 11)
-    {
-        duty[0] = 0.5;
-    }
-    else if(t >= 11)
-    {
-        duty[0] = 0;
-    }
-    g_GtmTomPwmHl.tOn[0] = duty[0];
-
-    GtmTomPwmHl_run();
+//    if(t <= 5)
+//    {
+//        duty[0] = 0;
+//    }
+//    else if(t > 5 && t < 11)
+//    {
+//        duty[0] = 0.5;
+//    }
+//    else if(t >= 11)
+//    {
+//        duty[0] = 0;
+//    }
+//    g_GtmTomPwmHl.tOn[0] = duty[0];
+//
+//    GtmTomPwmHl_run();
 
     /* LPF */
     w = (theta - theta_old) / Ts;
     W_RPM_Origin = (uint32)(60*w/(2*3.141592)); // 추가, LPF 거치지 않은 RPM
-    w = LPF(w_old, w, Ts, 500);
+    w = LPF(w_old, w, Ts, 90);
     w_old = w;
     W_RPM = (uint32)(60*w/(2*3.141592));
     theta_old = theta;
 
-
     //_out_uart3_int(W_RPM_Origin); //LPF 거치지 않은 RPM
     //_out_uart3_int(W_RPM);          // LPF 거친 RPM
 
+//    /*position 제어---------------------------------------------------------------------------------*/
+//    theta_ref = 40*sin(t);
+//
+//    error_theta = theta_ref - theta;
+//    error_theta_int = error_theta_int_old + error_theta*Ts;
+//    error_theta_int_old = error_theta_int;
+//
+//    w_ref = kp_theta*error_theta + ki_theta*error_theta_int;
+//
+//    /*--------------------------------------------------------------------------------------------*/
+
+    /* PI 속도 제어 */
+    //setpoint 설정
+    if(t <= 4)
+    {
+        w_ref = 0;
+    }
+    else if(t > 4 && t < 19)
+    {
+        w_ref = 0.06667 * Wd * (2 * 3.14) * (t - 4); // 0.06667 = 1/15 (기울기)
+    }
+    else if(t > 19 && t < 26)
+    {
+        w_ref = Wd * (3.14 * 2);
+    }
+    else if(t > 26 && t < 41)
+    {
+        w_ref = Wd * (3.14 * 2) - 0.06667 * Wd * (2 * 3.14) * (t - 26);
+    }
+    else if(t >= 41)
+    {
+        w_ref = 0;
+    }
+
+
+    //PI
+    if (t <= 4)
+    {
+        Vin = 0;
+    }
+    else if(t > 4 && t < 41)
+    {
+        error_w = w_ref - w; // Error 정의
+        error_w_int = error_w_int_old + (error_w) * Ts; // Error 적분
+        error_w_int_old = error_w_int;
+
+        Error_w = (uint32)error_w; // for monitoring
+        Error_w_int = (uint32)error_w_int; // for monitoring
+
+        if(error_w_int > 10) // Error 적분의 한계치
+        {
+            error_w_int = 10;
+        }
+
+        Vin = (kp*error_w + ki*error_w_int);
+
+        if(Vin > 11) Vin = 11; // 제어 입력 제한 치 설정
+        else if(Vin < 0) Vin = 0;
+
+//        if(t > 22 & t < 23)
+//        {
+//            per = per_old + fabsf(error_w)*Ts;
+//            per_old = per;
+//            W_st = w;
+//            V_st = Vin;
+//        }
+    }
+    else if(t >= 41)
+    {
+        Vin = 0;
+    }
+
+    // duty 설정
+    if(t <= 4)
+    {
+        duty[0] = 0;
+    }
+    else if(t > 4 && t < 41)
+    {
+        duty[0] = Vin / 12;
+    }
+    else if(t >= 41)
+    {
+        duty[0] = 0;
+    }
+    g_GtmTomPwmHl.tOn[0] = duty[0];
+    GtmTomPwmHl_run();
+    _out_uart3_int(W_RPM);
 }
 
 float32 LPF(float32 y_old, float32 x, float32 Ts, float32 band)
 {
+    //band = cutoff frequency (단위 : rad/s)
     double A1 = Ts / (Ts + 1 / band);
     float32 y = y_old + A1 * (x - y_old);
 

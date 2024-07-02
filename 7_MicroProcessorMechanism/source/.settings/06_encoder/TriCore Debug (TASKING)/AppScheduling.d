@@ -156,3 +156,7 @@ AppScheduling.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/06_encoder/L
 c:/IVS/7_MicroProcessorMechanism/source/.settings/06_encoder/Libraries/iLLD/TC27D/Tricore/_Lib/DataHandling/Ifx_Fifo.h :
 AppScheduling.o :	c:/IVS/7_MicroProcessorMechanism/source/.settings/06_encoder/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h
 c:/IVS/7_MicroProcessorMechanism/source/.settings/06_encoder/Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.h :
+AppScheduling.o :	c:/Infineon/AURIX-Studio-1.9.20/tools/Compilers/Tasking_1.1r8/ctc/include/math.h
+c:/Infineon/AURIX-Studio-1.9.20/tools/Compilers/Tasking_1.1r8/ctc/include/math.h :
+AppScheduling.o :	c:/Infineon/AURIX-Studio-1.9.20/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h
+c:/Infineon/AURIX-Studio-1.9.20/tools/Compilers/Tasking_1.1r8/ctc/include/typeinfo.h :
