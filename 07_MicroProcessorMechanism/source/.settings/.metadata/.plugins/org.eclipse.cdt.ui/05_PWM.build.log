@@ -1,0 +1,13 @@
+14:51:46 **** Incremental Build of configuration TriCore Debug (TASKING) for project 05_PWM ****
+make --output-sync -j12 all 
+Invoking: Print Size
+TASKING VX-toolset for AURIX Development Studio (non-commercial): ELF size v1.1r8 Build 22011964
+elfsize  "05_PWM.elf"
+Total sizes:
+ROM: 0x422e (16942) = code: 0x3f94 (16276) + romdata: 0x29a (666)
+RAM: 0x95d6 (38358) = data + bss
+Finished building: 05_PWM.siz
+ 
+
+14:51:47 Build Finished. 0 errors, 0 warnings. (took 353ms)
+

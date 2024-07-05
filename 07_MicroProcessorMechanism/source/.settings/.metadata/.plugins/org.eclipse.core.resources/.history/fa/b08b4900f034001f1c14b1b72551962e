@@ -1,0 +1,59 @@
+/*
+ * DrvAdc.c
+ *
+ *  Created on: 2024. 6. 28.
+ *      Author: user
+ */
+
+#include "DrvAdc.h"
+#include "IfxVadc.h"
+#include "IfxVadc_Adc.h"
+
+typedef struct
+{
+        IfxVadc_Adc avdc; /* VADC handle */
+        IfxVadc_Adc_Group adcGroup;
+} App_VadcAutoScan;
+
+static void DrvAdc_Group0Init(void);
+static void DrvAdc_Group0channelInit(uint8 param_ChNum);
+
+App_VadcAutoScan g_VadcAutoScan;
+
+IfxVadc_Adc_Channel adc0Channel[ADC_GROUP0_MAX];
+
+uint32 stSensorAdcRaw;
+
+void DrvAdcInit(void)
+{
+    DrvAdc_Group0Init();
+}
+
+static void DrvAdc_Group0Init(void)
+{
+    IfxVadc_Adc_Config adcConfig;
+    IfxVadc_Adc_initModuleConfig(&adcConfig, &MODULE_VADC);
+
+    IfxVadc_Adc_initModule(&g_VadcAutoScan.vadc, &adcConfig);
+
+    IfxVadc_Adc_GroupConfig adcGroupConfig;
+    IfxVadc_Adc_initGroupConfig(&adcGroupConfig, &g_VadcAutoScan.vadc);
+
+    adcGroupConfig.groupId = IfxVadc_GroupId_0;
+    adcGroupConfig.master = adcGroupConfig.groupId;
+
+    adcGroupConfig.arbiter.requestSlotScanEnabled = TRUE;
+
+    adcGroupConfig.scanRequest.autoscanEnabled = TRUE;
+
+    adcGroupConfig.scanRequest.triggerConfig.gatingMode = 1;
+
+    IfxVadc_Adc_initGroup(&g_VadcAutoScan.adcGroup, &adcGroupConfig);
+
+    DrvAdc_Group0ChannelInit(ADC_GROUP0_CH1);
+
+    IfxVadc_Adc_startScan(&g_VadcAutoScan.adcGroup);
+
+}
+
+
